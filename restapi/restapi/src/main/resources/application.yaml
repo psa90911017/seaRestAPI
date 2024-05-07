@@ -1,0 +1,56 @@
+server:
+  port: 8080
+
+
+spring:
+  # DB config
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ohgi_restaurant
+    username: ohgiraffers
+    password: ohgiraffers
+  # Fileupload
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 10MB
+  web:
+    resources:
+      static-locations: classpath:/productimgs/
+  # JPA config
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    database: mysql
+    properties:
+      hibernate:
+        format_sql: true
+
+
+## HS512 ????? ??? ??? ??? 512bit, ? 64byte ??? secret key? ???? ??.
+## Secret ?? ?? ???? Base64 ? ???? ?? ????(base64 ?? ??)
+jwt:
+  secret: 2KUG3da4Vsw9Hc6BJ2iOfgMg9hdhXbBhump0eU4E20vwMAMFCfdTVDR0nMxfwSIQpHSoGsO6C9BvBctWWZkwdg==
+
+
+# swagger-ui custom path
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+
+## ??? ??? ??? ??? ? ??? ?? ??
+image:
+  ## WebConfig ??
+  add-resource-locations: classpath:/static/productimgs/
+  add-resource-handler: /productimgs/**
+  ## ProductService ??
+  image-dir: src/main/resources/static/productimgs
+  image-url: http://localhost:8080/productimgs/
+
+
+# Logging Level
+logging:
+  level:
+    root: info
