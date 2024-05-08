@@ -66,7 +66,7 @@ public class AuthService {
         log.info("[AuthService] tokenDTO {}", tokenDTO);
 
         log.info("[AuthService] login() END");
-        return memberDTO;
+        return tokenDTO;
     }
 
     /* 필기 : 회원가입 */

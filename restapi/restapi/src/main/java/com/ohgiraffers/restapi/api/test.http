@@ -1,0 +1,10 @@
+### POST user login
+POST localhost:8080/auth/login
+Content-Type:application/json
+Accept:*/*
+Access-Control-Allow-Origin:*
+
+{
+  "memberId" : "user01",
+  "memberPassword" : "user01"
+}
